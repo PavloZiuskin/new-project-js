@@ -1,0 +1,107 @@
+:root {
+  --main-text-familly: 'Roboto', sans-serif;
+
+  //   text color!!!
+
+  --main-text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --footer-text-color: #545454
+  --akcent-text-color: #ff6b08;
+  --warning-text-color: #ff001b;
+
+  //   BCG COLOR
+
+  --main-bcg-color: #ffffff;
+  --footer-bcg-color: #F7F7F7;
+  --akcent-bcg-color: #FF6B01;
+}
+::before,
+::after {
+	box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-text-familly);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+
+
+}
+
+.link {
+  display: block;
+  text-decoration: inherit;
+  color: currentColor;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+.container{
+  background-color: var(--akcent-bcg-color);
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    display: none;
+}
+
+// Modal hide
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
