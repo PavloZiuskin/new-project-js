@@ -19,70 +19,7 @@
 ::after {
 	box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
-}
 
-body {
-  font-family: var(--main-text-familly);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-
-
-}
-
-.link {
-  display: block;
-  text-decoration: inherit;
-  color: currentColor;
-}
-
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  text-transform: uppercase;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-.container{
-  background-color: var(--akcent-bcg-color);
-}
 
 .hidden {
     position: absolute;
