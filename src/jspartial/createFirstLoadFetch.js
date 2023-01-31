@@ -1,9 +1,13 @@
 import { fetchApi } from './fetchApi';
 
-const refs = {
-  gallery: document.querySelector('.gallery'),
-};
+export function setupRefs() {
+  return (refs = {
+    gallery: document.querySelector('.gallery'),
+    form: document.querySelector('.form-search'),
+  });
+}
 function createFilmsFirstLoadCard(cards) {
+  setupRefs();
   const createMurkap = cards
     .map(
       ({ id, original_title, release_date, poster_path }) => `
