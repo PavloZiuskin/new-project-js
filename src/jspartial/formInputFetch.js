@@ -1,7 +1,7 @@
 import { refs } from './createFirstLoadFetch';
 import { fetchInputApi } from './fetchApi';
 import { createFilmsFirstLoadCard } from './createFirstLoadFetch';
-import { firstLoadFetchFilmCards } from './createFirstLoadFetch';
+import { pagination } from './pagination';
 
 export async function formInputFetchMovie(e) {
   e.preventDefault();
@@ -20,7 +20,8 @@ export async function formInputFetchMovie(e) {
         refs.gallery.innerHTML = '';
 
         createFilmsFirstLoadCard(data.results);
-        console.log(data);
+        pagination(data);
+        console.log(refs.form.searchQuery.value);
       })
       .catch(err => console.log(err));
   } catch {

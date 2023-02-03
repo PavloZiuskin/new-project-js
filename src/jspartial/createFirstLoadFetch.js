@@ -1,6 +1,11 @@
 import { fetchApi } from './fetchApi';
 import { formInputFetchMovie } from './formInputFetch';
-import { pagination } from './pagination';
+import {
+  pagination,
+  onClickIncrementPage,
+  onClickDecrementPage,
+  onClickPaginationBtnNumber,
+} from './pagination';
 
 export const refs = {
   gallery: document.querySelector('.gallery'),
@@ -19,8 +24,11 @@ export const refs = {
 };
 
 refs.form.addEventListener('submit', formInputFetchMovie);
+refs.minusQuery.addEventListener('click', onClickDecrementPage);
+refs.plusQuery.addEventListener('click', onClickIncrementPage);
+refs.containerPage.addEventListener('click', onClickPaginationBtnNumber);
 export function createFilmsFirstLoadCard(cards) {
-  const createMurkap = cards
+  refs.gallery.innerHTML = cards
     .map(
       ({ id, original_title, release_date, poster_path }) => `
         <li class="gallary__card" data-setId="${id}">
@@ -35,12 +43,11 @@ export function createFilmsFirstLoadCard(cards) {
         </li>`
     )
     .join('');
-  refs.gallery.insertAdjacentHTML('beforeend', createMurkap);
 }
 
-export async function firstLoadFetchFilmCards() {
+export async function firstLoadFetchFilmCards(pageCurrent) {
   try {
-    await fetchApi()
+    await fetchApi(pageCurrent)
       .then(data => {
         createFilmsFirstLoadCard(data.results);
         pagination(data);
