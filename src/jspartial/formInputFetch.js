@@ -1,0 +1,29 @@
+import { refs } from './createFirstLoadFetch';
+import { fetchInputApi } from './fetchApi';
+import { createFilmsFirstLoadCard } from './createFirstLoadFetch';
+import { firstLoadFetchFilmCards } from './createFirstLoadFetch';
+
+export async function formInputFetchMovie(e) {
+  e.preventDefault();
+
+  const elem = e.currentTarget.elements;
+  try {
+    fetchInputApi(elem.searchQuery.value)
+      .then(data => {
+        if (data.results.length === 0) {
+          refs.errorInput.classList.remove('hidden');
+          return;
+        }
+        if (!refs.errorInput.classList.contains('hidden')) {
+          refs.errorInput.classList.add('hidden');
+        }
+        refs.gallery.innerHTML = '';
+
+        createFilmsFirstLoadCard(data.results);
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+  } catch {
+    error => console.log(error);
+  }
+}

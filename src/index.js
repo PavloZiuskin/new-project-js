@@ -1,4 +1,9 @@
-import { firstLoadFetchFilmCards } from './jspartial/createFirstLoadFetch';
+import {
+  firstLoadFetchFilmCards,
+  refs,
+} from './jspartial/createFirstLoadFetch';
 import { fetchInputApi } from './jspartial/fetchApi';
+import { formInputFetchMovie } from './jspartial/formInputFetch';
+import { pagination } from './jspartial/pagination';
+
 firstLoadFetchFilmCards();
-fetchInputApi('babylon').then(data => console.log(data));
